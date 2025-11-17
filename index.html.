@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxi Mini App</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
+
+</head>
+<body>
+
+<div class="screen">
+  <h1 class="title">🚖 KyivTaxi</h1>
+
+  <div id="map"></div>
+
+  <!-- Form -->
+  <div class="panel">
+    <label>Початкова точка</label>
+    <input id="startInput" placeholder="Вкажіть адресу">
+
+    <label>Кінцева точка</label>
+    <input id="endInput" placeholder="Куди їдемо?">
+
+    <button id="routeBtn">Прокласти маршрут</button>
+
+    <div class="priceBox">
+      <p>Дистанція: <span id="dist">0 км</span></p>
+      <p>Ціна: <span id="price">0 грн</span></p>
+    </div>
+
+    <button id="orderBtn" class="primary">Замовити</button>
+  </div>
+
+  <!-- Chat -->
+  <div class="chatBox">
+    <h3>💬 Чат водій – пасажир</h3>
+    <div id="messages"></div>
+    <input id="msgInput" placeholder="Написати..." />
+    <button id="sendMsg">➤</button>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
